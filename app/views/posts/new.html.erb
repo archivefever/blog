@@ -1,8 +1,6 @@
 <h2>New post</h2>
-<%= error_message_for :post %>
-<br>
 <div class="forms">
-  <%= form_for :post do |f| %>
+  <%= form_for :post, url: '/posts' do |f| %>
     <%= f.label :title %>:
     <%= f.text_field :title %><br />
 

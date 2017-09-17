@@ -5,8 +5,9 @@
       <ul>
         <li><%= post.comments.size %> Comments</li>
         <li><%= post.user.username %></li>
-        <li><strong><%= post.title %></strong></li>
-        <li><%= post.body.truncate(300, separator: " ") %></li>
+        <li><strong><%= link_to post.title, post_path(post.id) %></strong></li>
+        <li><%= post.body.truncate(300, separator: " ") %>...</li>
+        <br>
       </ul>
     <% end %>
   </ul>
