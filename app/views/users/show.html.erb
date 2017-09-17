@@ -1,1 +1,16 @@
-<!-- show a users posts -->
+<h2><%= @user.username %>'s Posts</h2>
+  <div class="lists">
+    <ul>
+      <% @user.posts.each do |post| %>
+        <ul>
+          <li><%= link_to post.title, post_path(post.id) %></li>
+          <li><%= post.created_at %></li>
+          <li><%= post.body.truncate(300, separator: " ") %></li>
+          <% if current_user.id == @post.user.id %>
+            <li><%= link_to "edit", edit_post_path(@post.id) %></li>
+            <li><%= link_to "delete", post_path(@post.id), :method => :delete %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </ul>
+  </div>

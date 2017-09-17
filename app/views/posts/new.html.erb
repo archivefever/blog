@@ -1,1 +1,14 @@
-<!-- create a new post form -->
+<h2>New post</h2>
+<%= error_message_for :post %>
+<br>
+<div class="forms">
+  <%= form_for :post do |f| %>
+    <%= f.label :title %>:
+    <%= f.text_field :title %><br />
+
+    <%= f.label :body %>:
+    <%= f.text_area :body, :cols => "30", :rows => "10" %><br />
+
+    <%= f.submit %>
+  <% end %>
+</div>

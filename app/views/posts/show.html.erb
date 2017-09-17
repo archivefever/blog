@@ -1,1 +1,18 @@
-<!-- show a post and all its comments -->
+<h2><%= @post.title %></h2>
+--<%= @post.user.username %>
+<p><%= @post.body %></p>
+<br>
+  <% if current_user.id == @post.user.id %>
+    <%= link_to "edit", edit_post_path(@post.id) %>
+    <%= link_to "delete", post_path(@post.id), :method => :delete %>
+  <% end %>
+<ul>
+  <% @post.comments.each do |comment| %>
+    <li><strong><%= comment.title %></strong></li>
+    <li><%= comment.body %></li>
+    <li><%= comment.user.username %></li>
+    <br>
+  <% end %>
+
+
+
