@@ -1,0 +1,15 @@
+<h2>Recent posts</h2>
+<div class="lists">
+  <ul>
+    <% @posts.each do |post| %>
+      <ul>
+        <li><%= post.comments.size %> Comments</li>
+        <li><%= post.user.username %></li>
+        <li><strong><%= post.title %></strong></li>
+        <li><%= post.body.truncate(300, separator: " ") %></li>
+      </ul>
+    <% end %>
+  </ul>
+</div>
+
+

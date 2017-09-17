@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog of Doom</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<h1></h1>
+<% if current_user %>
+  Hey there, <%= current_user.name %>!| <%= link_to "Logout", '/sessions/destroy' %>
+<% else %>
+  <%= link_to 'Log in', '/sessions/new' %> | <%= link_to 'Sign up', '/users/new' %>
+<% end %>
+<%= yield %>
+
+</body>
+</html>
