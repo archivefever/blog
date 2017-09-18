@@ -1,0 +1,13 @@
+<h2>New comment</h2>
+<div class="forms">
+<%= form_for :comment, url: {action: "create"} do |f| %>
+    <%= f.hidden_field :post_id, :value => @post.id %>
+    <%= f.label :title %>:
+    <%= f.text_field :title %><br />
+
+    <%= f.label :body %>:
+    <%= f.text_area :body, :cols => "30", :rows => "10" %><br />
+
+    <%= f.submit %>
+  <% end %>
+</div>

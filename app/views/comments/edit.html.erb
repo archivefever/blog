@@ -1,0 +1,12 @@
+<h2>Edit this comment</h2>
+<div class="forms">
+<%= form_for(@comment, url: {action: 'update', id: @comment.id}) do |f| %>
+    <%= f.label :title %>:
+    <%= f.text_field :title %><br />
+
+    <%= f.label :body %>:
+    <%= f.text_area :body, :cols => "30", :rows => "10" %><br />
+
+    <%= f.submit %>
+  <% end %>
+</div>

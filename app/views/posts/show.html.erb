@@ -1,0 +1,28 @@
+<h2><%= @post.title %></h2>
+--<%= @post.user.username %>
+<p><%= @post.body %></p>
+<br>
+  <% if current_user.id == @post.user.id %>
+    <%= link_to "edit", edit_post_path(@post.id) %>
+    <%= link_to "delete", post_path(@post.id), :method => :delete %>
+  <% end %>
+<br>
+Comments:
+<br>
+<%= link_to "Post a new comment", new_post_comment_url(@post.id) %>
+<ul>
+  <% @post.comments.each do |comment| %>
+    <li><strong><%= comment.title %></strong></li>
+    <li><%= comment.body %></li>
+    <li><%= comment.user.username %></li>
+    <% if current_user.id == @post.user.id %>
+      <li><%= link_to "edit", edit_post_comment_path(@post.id, comment.id) %></li>
+      <li><%= link_to "delete", post_comment_path(@post.id, comment.id), :method => :delete %></li>
+    <% end %>
+    <br>
+  <% end %>
+</ul>
+
+
+
+

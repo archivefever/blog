@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :posts
+  resources :posts do
+    resources :comments, except: [:index, :show]
+  end
+
+
   resources :users, only: [:create, :new, :show ]
   resources :sessions, only: [:new, :create, :destroy]
 

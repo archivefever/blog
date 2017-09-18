@@ -1,3 +1,43 @@
+h1 {
+  text-align: center;
+  color: lightblue;
+  text-shadow: 1px 1px brown;
+}
+
+h2 {
+  color: darkred;
+  text-shadow: 1px 1px goldenrod;
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+}
+
+body {
+  background-color: #f7f4f6;
+  color: darkgreen;
+}
+
+a:link {
+    color: goldenrod;
+    text-shadow: 1px darkgreen;
+}
+
+a:visited {
+    color: lightblue;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a:active {
+    color: blue;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
