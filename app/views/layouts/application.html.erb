@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog of Doom</title>
+  <title>Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>Blog of Doooooooom.</h1>
+<h1>This isn't the blog you're looking for.</h1>
 <%= link_to posts_path do %>
-    <%= image_tag '/gir_doom_custom_by_k0smos.jpg', alt: 'Im gonna sing the doom song now' %>
+    <%= image_tag '/header.png', alt: 'What is this blog even' %>
 <% end %>
 <br>
 <% if current_user %>

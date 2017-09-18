@@ -1,13 +1,18 @@
 h1 {
   text-align: center;
-  color: lightgreen;
-  text-shadow: 1px 1px black;
+  color: lightblue;
+  text-shadow: 1px 1px brown;
+}
+
+h2 {
+  color: darkred;
+  text-shadow: 1px 1px goldenrod;
 }
 
 img {
     display: block;
     margin: auto;
-    width: 50%;
+    width: 100%;
     padding: 10px;
 }
 
