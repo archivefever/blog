@@ -7,7 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1></h1>
+<h1>Blog of Doooooooom.</h1>
+<%= link_to posts_path do %>
+    <%= image_tag '/gir_doom_custom_by_k0smos.jpg', alt: 'Im gonna sing the doom song now' %>
+<% end %>
+<br>
 <% if current_user %>
   Hey there, <%= current_user.username %>! || <%= link_to "Log out", session_path(:user), :method => :delete %> || <%= link_to "Write a new post", '/posts/new' %>
 <% else %>
