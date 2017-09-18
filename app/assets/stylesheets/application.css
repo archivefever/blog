@@ -18,6 +18,24 @@ img {
 
 body {
   background-color: #f7f4f6;
+  color: darkgreen;
+}
+
+a:link {
+    color: goldenrod;
+    text-shadow: 1px darkgreen;
+}
+
+a:visited {
+    color: lightblue;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a:active {
+    color: blue;
 }
 
 /*
