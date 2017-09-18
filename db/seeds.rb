@@ -1,20 +1,25 @@
 require 'faker'
 
-
-20.times do
+names = []
+until names.length == 30
   name = Faker::StarWars.character
-User.create!(
-  username: name.join(''),
-  email: Faker::Internet.safe_email(name.join('')),
+  name.delete! "\s\n"
+  names << name unless names.include?(name)
+end
+
+30.times do |n|
+User.create(
+  username: names[n],
+  email: Faker::Internet.safe_email(names[n]),
   password: "password"
   )
 end
 
-100.times do
+150.times do
   Post.create!(
     title: Faker::StarWars.quote,
     body: Faker::Hipster.paragraph(5),
-    user_id: rand(1..20)
+    user_id: rand(1..30)
     )
 end
 
@@ -22,8 +27,8 @@ end
   Comment.create!(
     title: Faker::StarWars.specie,
     body: Faker::StarWars.wookiee_sentence,
-    user_id: rand(1..20),
-    post_id: rand(1..100)
+    user_id: rand(1..30),
+    post_id: rand(1..150)
     )
 end
 
